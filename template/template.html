@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.dead{
+    margin-top: 20%;
+    position: relative;
+    height: 22px;
+    width: 40%;
+    color: rgb(233, 27, 27);
+    z-index: 2;
+    font-size:400%;
+}
+.alive{
+    margin-top: 20%;
+    position: relative;
+    height: 22px;
+    width: 40%;
+    color: rgb(27, 233, 37);
+    z-index: 2;
+    font-size:400%;
+}
+p{
+    height: 50px;
+    width: 38%;;
+    position: relative;
+    z-index: 2;
+    color: azure;
+}
+</style>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="static/Heart Rate - 1210.mp4" type="video/mp4">
+      </video>
+    <center>
+        {% if data==0 %}
+        <h1 class="dead">DEAD</h1>
+        <p>(MAY HIS SOUL REST IN PEACE)</p>
+        {%else%}
+        <h1 class="alive">ALIVE</h1>
+        {%endif%}
+    </center>
+</body>
+</html>

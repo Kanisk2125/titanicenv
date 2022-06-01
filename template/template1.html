@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background:url("static/titanic-ship-wallpaper.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    *{
+        margin: 0;padding: 0;
+    }
+    
+    img{
+        position: relative;
+        z-index: -2;
+    }
+    nav{
+        display: flex;
+        justify-content:flex-start;
+    }
+    ul{
+        padding: 34px;
+    }
+    li{
+        list-style: none;
+        display: inline;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+    header{
+        background-color: black;
+        color: beige;
+        height: 12vh;
+        width: 100vw;
+    }
+    .li {
+            display: none;
+            overflow: auto;
+            top:0%;
+            left: 0;
+            position: fixed;
+        background-color: black;
+        height: 100%;
+        width: 17%;
+        z-index: 1;
+}
+    .ship{
+        background-color: rgba(69, 52, 167, 0.529);
+        margin-left: 27%;
+        height: 50px;
+        width: 50%;
+    }
+    h1{
+        margin-left: 19px;
+        color: blueviolet;
+    }
+    .box1,.box2,.box3{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .data{
+        margin-left: 24%;
+        margin-top: 50px;
+        height: 400px;
+        width: 700px;
+        background: url("static/images.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    input{
+        margin-top: 7px;
+        margin-bottom: 7px;
+        width: 210px;
+        height: 50px;
+    }
+    .embark{
+        margin-left: 240px;
+    }
+    .button{
+        margin-left: 240px;
+        width: 210px;
+        height: 50px;
+        margin-top: 10px;
+        background-color: rgb(34, 211, 134);
+    }
+   
+    
+</style>
+<body id="bod">
+    <header>
+        <nav>
+            <ul>
+                
+                <li>
+                    <span id="about">ABOUT TITANIC</span>
+                    <div id="para" class="li">
+                    <div class="colum">
+                       
+                    <span class="colunn"></span>
+                    <p>Titanic, in full Royal Mail Ship (RMS) Titanic, British luxury passenger liner that sank on April 14–15, 1912, during its maiden voyage, en route to New York City from Southampton, England, killing about 1,500 (see Researcher’s Note: Titanic) passengers and ship personnel. One of the most famous tragedies in modern history, it inspired numerous stories, several films, and a musical and has been the subject of much scholarship and scientific speculation.</p>
+                </div></div>
+                </li>
+    
+            </ul>
+        </nav>
+    </header>
+    <div class="ship">
+    <h1>TITANIC SHIP :-  DEATH PREDICTOR</h1>
+    </div>
+    <form method="post" action="{{url_for('home')}}">
+    <div class="data">
+        <div class="box1">
+        <input type="number" class="pclass" placeholder="Enter pclass" min="1" name="a">
+        <input type="number" class="gender" placeholder="Enter gender : 0 for male and 1 for female" min="0" max="1" name="b">
+        </div>
+        <div class="box2">
+        <input type="number" class="age" placeholder="Enter age" min="1" name="c">
+        <input type="number" class="siblings" placeholder="No. of siblings or spouses" min="1" name="d">
+        </div>
+        <div class="box3">
+        <input type="number" class="parent" placeholder="Enter number of parent/children aboard" min="0" name="e">
+        <input type="text" class="fare" placeholder="Enter fare" max="100" name="f">
+        </div>
+        <input type="number" class="embark" placeholder="Enter port of embarkation" min="1" max="3" name="g">
+       <input type="submit" value="PREDICT" class="button">
+    </div>
+</form>
+</body>
+<script>
+    var btn=document.getElementById("about");
+    var btn1=document.getElementById("para");
+    var bod=document.getElementById("bod");
+    btn.onclick = function(){
+         btn1.style.display= "block";
+    }
+    window.onclick = function(event) {
+    if (event.target == btn1 || event.target==bod) {
+     btn1.style.display = "none";
+    }
+    }
+</script>
+
+</html>
